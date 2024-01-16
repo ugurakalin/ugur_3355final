@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .register-container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <img src="ustfıtı.png" alt="">
+        <h2>Kayit OL</h2>
+        <form id="register-form">
+            <input type="text" id="ad" name="ad" placeholder="Ad">
+            <input type="text" id="soyad" name="soyad" placeholder="Soyad">
+            <input type="email" id="email" name="email" placeholder="Kullanici email">
+            <input type="password" id="sifre" name="sifre" placeholder="Sifre">
+            <input type="password" id="sifre-tekrar" name="sifre-tekrar" placeholder="Tekrar .">
+            <select id="ulke" name="ulke">
+                <option value="Turkiye">Turkiye</option>
+            </select>
+            <select id="sehir" name="sehir">
+                <option value="Istanbul">İstanbul</option>
+                <option value="Ankara">Ankara</option>
+                <option value="Izmir">İzmir</option>
+                <option value="Antalya">Antalya</option>
+                <option value="Bursa">Bursa</option>
+                <option value="Adana">Adana</option>
+                <option value="Konya">Konya</option>
+                <option value="Trabzon">Trabzon</option>
+                <option value="Eskisehir">Eskişehir</option>
+                <option value="Diyarbakir">Diyarbakır</option>
+                <option value="Samsun">Samsun</option>
+                <option value="Gaziantep">Gaziantep</option>
+                <option value="Kayseri">Kayseri</option>
+                <option value="Mugla">Muğla</option>
+                <option value="Mersin">Mersin</option>
+                <option value="Adapazari">Adapazarı</option>
+                <option value="Erzurum">Erzurum</option>
+                <option value="Denizli">Denizli</option>
+                <option value="Hatay">Hatay</option>
+            </select>
+            <button type="submit">Kayit OL</button>
+        </form>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+
+</html>

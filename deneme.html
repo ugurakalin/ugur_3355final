@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Kayıt OL</h2>
+        <form id="register-form">
+            <input type="text" id="ad" name="ad" placeholder="Ad">
+            <input type="text" id="soyad" name="soyad" placeholder="Soyad">
+            <input type="email" id="email" name="email" placeholder="Kullanıcı email">
+            <input type="password" id="sifre" name="sifre" placeholder="Şifre">
+            <input type="password" id="sifre-tekrar" name="sifre-tekrar" placeholder="Tekrar .">
+            <select id="ulke" name="ulke">
+                <option value="Turkiye">Turkiye</option>
+            </select>
+            <select id="sehir" name="sehir">
+                <!-- Options for cities -->
+            </select>
+            <button type="submit">Kayıt OL</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const ad = document.getElementById('ad').value;
+            const soyad = document.getElementById('soyad').value;
+            const email = document.getElementById('email').value;
+            const sifre = document.getElementById('sifre').value;
+            const sifreTekrar = document.getElementById('sifre-tekrar').value;
+            const ulke = document.getElementById('ulke').value;
+            const sehir = document.getElementById('sehir').value;
+
+            if (sifre !== sifreTekrar) {
+                alert('Şifreler eşleşmiyor.');
+                return;
+            }
+
+            // Assuming registration is successful
+            alert('Kayıt başarılı! LÜTFEN GİRİŞ SAYFASINA GİDİNİZ');
+            // Redirect to another page (welcome page) with the entered username
+            window.location.href = "welcome.html?username=" + email.split("@")[0];
+        });
+    </script>
+</body>
+
+</html>
+

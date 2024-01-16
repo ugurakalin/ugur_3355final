@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Search Results</title>
+</head>
+<body>
+    <h1>Hotel Search Results</h1>
+
+    {% for hotel in hotels %}
+        <div>
+            <h2>{{ hotel['name'] }}</h2>
+            <img src="{{ hotel['image'] }}" alt="Hotel Image" style="max-width: 200px;">
+            <p>Price: {{ hotel['price'] }}</p>
+            <p>Rating: {{ hotel['rating'] }} ({{ hotel['comments'] }} comments)</p>
+            <p>Amenities: {{ ', '.join(hotel['amenities']) }}</p>
+            
+            <!-- Embed Google Maps with the hotel coordinates -->
+            <div id="map-{{ loop.index }}" style="height: 300px; width: 100%;"></div>
+            <script>
+                // Replace the following line with actual Google Maps API key
+                const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
+
+                function initMap() {
+                    const coordinates = { lat: {{ hotel['coordinates']['lat'] }}, lng: {{ hotel['coordinates']['lng'] }} };
+                    const map = new google.maps.Map(document.getElementById('map-{{ loop.index }}'), {
+                        center: coordinates,
+                        zoom: 15
+                    });
+                    
+                    new google.maps.Marker({
+                        position: coordinates,
+                        map: map,
+                        title: '{{ hotel['name'] }}'
+                    });
+                }
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key={{ apiKey }}&callback=initMap">
+            </script>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
